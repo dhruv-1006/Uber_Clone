@@ -6,9 +6,14 @@ const UserLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const [userData, setUserData] = useState({})
+
   const submitHandler = (e)=>{
     e.preventDefault();
-    console.log(email, password);
+    setUserData({
+      email: email,
+      password: password
+    })
     setEmail('');
     setPassword('');  
   }
@@ -55,10 +60,10 @@ const UserLogin = () => {
       </div>
       
       <div>
-        <button
-        className='bg-[#111] text-white font-semibold mb-7 rounded px-4 py-2 w-full text-lg placeholder:text-base'
+        <Link to='/captain-login'
+        className='bg-[#111] flex items-center justify-center text-white font-semibold mb-5 rounded px-4 py-2 w-full text-lg placeholder:text-base'
         >Sign in as captain
-        </button>
+        </Link>
       </div>  
 
     </div>
